@@ -15,7 +15,9 @@ class App extends React.Component {
       title: title,
       description: description
     }
-    console.log(nuevoDato)
+    this.setState({
+      datos: [...this.state.datos, nuevoDato]
+    })
   }
 
   render() {
