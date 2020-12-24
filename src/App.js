@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import datos from './datos.json'
 import Datos from './components/Datos'
+import DatoForm from './components/DatoForm'
 
 class App extends React.Component {
 
@@ -12,6 +13,7 @@ class App extends React.Component {
   render() {
     return( 
       <div>
+        <DatoForm/>
         <Datos datos={this.state.datos}/>
       </div>)
   }
