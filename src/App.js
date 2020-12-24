@@ -10,10 +10,18 @@ class App extends React.Component {
     datos: datos
   }
 
+  addDato = (title, description) => {
+    const nuevoDato = {
+      title: title,
+      description: description
+    }
+    console.log(nuevoDato)
+  }
+
   render() {
     return( 
       <div>
-        <DatoForm/>
+        <DatoForm addDato={this.addDato}/>
         <Datos datos={this.state.datos}/>
       </div>)
   }

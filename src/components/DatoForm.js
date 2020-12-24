@@ -8,6 +8,7 @@ class DatoForm extends React.Component{
     }
 
     formEnviado = (e) => {
+        this.props.addDato(this.state.title, this.state.descripcion)
         e.preventDefault()
     }
 
@@ -25,7 +26,7 @@ class DatoForm extends React.Component{
                 <input type="text" placeholder="Escribe el dato" name="title" onChange={this.onChange} value={this.state.title}/>
                 <br/>
                 <br/>
-                <textarea placeholder="Descripcion"></textarea>
+                <textarea placeholder="Descripcion" name="descripcion" onChange={this.onChange}></textarea>
                 <br/>
                 <br/>
                 <input type="submit" value="Guardar"/>
