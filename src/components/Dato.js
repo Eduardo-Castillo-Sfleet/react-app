@@ -1,5 +1,8 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
+
 class Dato extends React.Component {
     render(){
 
@@ -14,6 +17,11 @@ class Dato extends React.Component {
             <button>X</button>
         </div>
     }
+
+}
+
+Dato.propTypes = {
+    dato: PropTypes.object
 }
 
 export default Dato;
