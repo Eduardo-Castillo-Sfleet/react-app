@@ -10,10 +10,11 @@ class App extends React.Component {
     datos: datos
   }
 
-  addDato = (title, description) => {
+  addDato = (titulo, descripcion) => {
     const nuevoDato = {
-      title: title,
-      description: description
+      titulo: titulo,
+      descripcion: descripcion,
+      id: this.state.datos.length
     }
     this.setState({
       datos: [...this.state.datos, nuevoDato]
