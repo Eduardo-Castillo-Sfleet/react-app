@@ -12,20 +12,26 @@ class App extends React.Component {
 
   addDato = (titulo, descripcion) => {
     const nuevoDato = {
+      id: this.state.datos.length,
       titulo: titulo,
       descripcion: descripcion,
-      id: this.state.datos.length
+      done: true
     }
     this.setState({
       datos: [...this.state.datos, nuevoDato]
     })
   }
 
+  deleteDato = (id) => {
+    const dato = this.state.datos.filter(task => task.id !== id)
+    console.log(dato)
+  }
+
   render() {
     return( 
       <div>
         <DatoForm addDato={this.addDato}/>
-        <Datos datos={this.state.datos}/>
+        <Datos datos={this.state.datos} deleteDato={this.deleteDato}/>
       </div>)
   }
 }

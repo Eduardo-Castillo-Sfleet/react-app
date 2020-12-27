@@ -14,7 +14,7 @@ class Dato extends React.Component {
             {descripcion} -
             {done} -
             <input type="checkbox" />
-            <button>X</button>
+            <button onClick={this.props.deleteDato}>X</button>
         </div>
     }
 
