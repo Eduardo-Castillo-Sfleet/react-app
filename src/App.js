@@ -23,8 +23,8 @@ class App extends React.Component {
   }
 
   deleteDato = (id) => {
-    const dato = this.state.datos.filter(task => task.id !== id)
-    console.log(dato)
+    const newListDatos = this.state.datos.filter(task => task.id !== id)
+    this.setState({datos: newListDatos})
   }
 
   render() {
