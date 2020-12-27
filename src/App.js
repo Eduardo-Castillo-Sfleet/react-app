@@ -3,6 +3,7 @@ import './App.css';
 import datos from './datos.json'
 import Datos from './components/Datos'
 import DatoForm from './components/DatoForm'
+import Posts from './components/Posts'
 
 class App extends React.Component {
 
@@ -41,6 +42,7 @@ class App extends React.Component {
       <div>
         <DatoForm addDato={this.addDato}/>
         <Datos datos={this.state.datos} deleteDato={this.deleteDato} updateDato={this.updateDato}/>
+        <Posts />
       </div>)
   }
 }
