@@ -12,8 +12,7 @@ class Dato extends React.Component {
             {id} - 
             {titulo} -
             {descripcion} -
-            {done} -
-            <input type="checkbox" />
+            <input type="checkbox" defaultChecked={done === true} onChange={this.props.updateDato.bind(this, id)}/>
             <button onClick={this.props.deleteDato.bind(this, id)}>X</button>
         </div>
     }

@@ -27,11 +27,20 @@ class App extends React.Component {
     this.setState({datos: newListDatos})
   }
 
+  updateDato = id => {
+    this.state.datos.map(dato => {
+      if(dato.id === id)
+        dato.done = !dato.done
+      return dato
+    })
+    console.log(this.state.datos)
+  }
+
   render() {
     return( 
       <div>
         <DatoForm addDato={this.addDato}/>
-        <Datos datos={this.state.datos} deleteDato={this.deleteDato}/>
+        <Datos datos={this.state.datos} deleteDato={this.deleteDato} updateDato={this.updateDato}/>
       </div>)
   }
 }

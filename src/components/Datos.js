@@ -5,7 +5,10 @@ import PropTypes from 'prop-types';
 
 class Datos extends React.Component{
     render() {
-        return this.props.datos.map(dato => <Dato dato={dato} key={dato.id} deleteDato={this.props.deleteDato}/>)
+        return this.props.datos.map(dato => <Dato dato={dato} 
+            key={dato.id} 
+            deleteDato={this.props.deleteDato} 
+            updateDato={this.props.updateDato}/>)
     }
 }
 
