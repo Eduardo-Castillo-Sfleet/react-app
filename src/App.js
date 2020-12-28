@@ -4,6 +4,8 @@ import datos from './datos.json'
 import Datos from './components/Datos'
 import DatoForm from './components/DatoForm'
 import Posts from './components/Posts'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 
 class App extends React.Component {
 
@@ -39,11 +41,17 @@ class App extends React.Component {
 
   render() {
     return( 
-      <div>
-        <DatoForm addDato={this.addDato}/>
-        <Datos datos={this.state.datos} deleteDato={this.deleteDato} updateDato={this.updateDato}/>
-        <Posts />
-      </div>)
+      <Router>
+        <Route path="/" render={() => {
+          return <div>
+            <DatoForm addDato={this.addDato}/>
+            <Datos datos={this.state.datos} deleteDato={this.deleteDato} updateDato={this.updateDato}/>
+            <Posts />
+          </div>
+        }}>
+        </Route>
+      </Router>
+      )
   }
 }
 
