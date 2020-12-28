@@ -42,14 +42,14 @@ class App extends React.Component {
   render() {
     return( 
       <Router>
-        <Route path="/" render={() => {
+        <Route exact path="/" render={() => {
           return <div>
             <DatoForm addDato={this.addDato}/>
             <Datos datos={this.state.datos} deleteDato={this.deleteDato} updateDato={this.updateDato}/>
-            <Posts />
           </div>
         }}>
         </Route>
+        <Route exact path="/posts" component={Posts}></Route>
       </Router>
       )
   }
