@@ -1,10 +1,13 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 import './App.css';
+
 import datos from './datos.json'
 import Datos from './components/Datos'
 import DatoForm from './components/DatoForm'
 import Posts from './components/Posts'
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Ant from './components/Ant'
 
 
 class App extends React.Component {
@@ -42,6 +45,9 @@ class App extends React.Component {
   render() {
     return( 
       <Router>
+        <Link to="/">Home</Link>
+        <Link to="/posts">Posts</Link>
+        <Link to="/ant">Ant</Link>
         <Route exact path="/" render={() => {
           return <div>
             <DatoForm addDato={this.addDato}/>
@@ -50,6 +56,7 @@ class App extends React.Component {
         }}>
         </Route>
         <Route exact path="/posts" component={Posts}></Route>
+        <Route exact path="/ant" component={Ant}></Route>
       </Router>
       )
   }
